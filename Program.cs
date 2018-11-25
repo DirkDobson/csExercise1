@@ -31,28 +31,33 @@ namespace csExercises1
             // }
             // while (loop == true);
 
-            System.Console.WriteLine("I will find factoral of number you put");
-            int fact = Convert.ToInt32(Console.ReadLine());
-            int newFact = 1;
-            if (fact >= 0)
+            // System.Console.WriteLine("I will find factoral of number you put");
+            // int fact = Convert.ToInt32(Console.ReadLine());
+            // int newFact = 1;
+            // if (fact >= 0)
+            // {
+            //     for ( int i = 1; i <= fact; i++)
+            //     {               
+            
+            Console.WriteLine("Guess number between 1 and 10. 4 tries");
+            Random guess = new Random();
+            int cpGuess = guess.Next(1, 11);
+            System.Console.WriteLine(cpGuess);
+            int tries = 4;
+            while (tries != 0)
             {
-                for ( int i = 1; i <= fact; i++)
-                {               
-                    newFact *= i;
-                    System.Console.WriteLine("i = " + i);
-                    System.Console.WriteLine("newFact = " + newFact);
-                }
-                Console.WriteLine(fact + "! = " + newFact);
-            } else 
-            {
-                for ( int u = -1; u >= fact; u--)
+                int userGuess = Convert.ToInt32(Console.ReadLine());
+                if (userGuess != cpGuess)
                 {
-                    newFact *= u;
-                    System.Console.WriteLine("i = " + u);
-                    System.Console.WriteLine("newFact = " + newFact);
+                    System.Console.WriteLine("wrong");
+                --tries;
+                continue;
+                } else
+                {
+                    System.Console.WriteLine("You got it right");
+                    break;
                 }
-                Console.WriteLine(fact + "! = " + newFact);
-            }
+            } 
         }
     }
 }
